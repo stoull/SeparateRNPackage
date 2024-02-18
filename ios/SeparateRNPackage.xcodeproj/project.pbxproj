@@ -17,7 +17,6 @@
 		C9AAD1EB2B81FC02000DA2C1 /* SeparateRNPackageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAD1EA2B81FC02000DA2C1 /* SeparateRNPackageTests.swift */; };
 		C9AAD1F52B81FC02000DA2C1 /* SeparateRNPackageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAD1F42B81FC02000DA2C1 /* SeparateRNPackageUITests.swift */; };
 		C9AAD1F72B81FC02000DA2C1 /* SeparateRNPackageUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAD1F62B81FC02000DA2C1 /* SeparateRNPackageUITestsLaunchTests.swift */; };
-		C9AAD2042B82002F000DA2C1 /* ReactNative in Resources */ = {isa = PBXBuildFile; fileRef = C9AAD2032B82002E000DA2C1 /* ReactNative */; };
 		D496A2810BF2FE312C2A8239 /* Pods_SeparateRNPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7477939D5E857F4D1B5BDD77 /* Pods_SeparateRNPackage.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +55,6 @@
 		C9AAD1F02B81FC02000DA2C1 /* SeparateRNPackageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeparateRNPackageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AAD1F42B81FC02000DA2C1 /* SeparateRNPackageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateRNPackageUITests.swift; sourceTree = "<group>"; };
 		C9AAD1F62B81FC02000DA2C1 /* SeparateRNPackageUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateRNPackageUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		C9AAD2032B82002E000DA2C1 /* ReactNative */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ReactNative; path = SeparateRNPackage/ReactNative; sourceTree = "<group>"; };
 		E285310D357AD28EA70DADEF /* Pods-SeparateRNPackage-SeparateRNPackageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeparateRNPackage-SeparateRNPackageTests.release.xcconfig"; path = "Target Support Files/Pods-SeparateRNPackage-SeparateRNPackageTests/Pods-SeparateRNPackage-SeparateRNPackageTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF619A65375CB8417EE1B26B /* Pods-SeparateRNPackage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeparateRNPackage.debug.xcconfig"; path = "Target Support Files/Pods-SeparateRNPackage/Pods-SeparateRNPackage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,7 +109,6 @@
 		C9AAD1C72B81FC00000DA2C1 = {
 			isa = PBXGroup;
 			children = (
-				C9AAD2032B82002E000DA2C1 /* ReactNative */,
 				C9AAD1D22B81FC01000DA2C1 /* SeparateRNPackage */,
 				C9AAD1E92B81FC02000DA2C1 /* SeparateRNPackageTests */,
 				C9AAD1F32B81FC02000DA2C1 /* SeparateRNPackageUITests */,
@@ -174,6 +171,7 @@
 				C9AAD1CD2B81FC00000DA2C1 /* Frameworks */,
 				C9AAD1CE2B81FC00000DA2C1 /* Resources */,
 				DC48C33EB195976B64F3EE41 /* [CP] Embed Pods Frameworks */,
+				C9751B1D2B820458008C577B /* Bundle React Native code and images */,
 			);
 			buildRules = (
 			);
@@ -271,7 +269,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9AAD1E02B81FC01000DA2C1 /* LaunchScreen.storyboard in Resources */,
-				C9AAD2042B82002F000DA2C1 /* ReactNative in Resources */,
 				C9AAD1DD2B81FC01000DA2C1 /* Assets.xcassets in Resources */,
 				C9AAD1DB2B81FC01000DA2C1 /* Main.storyboard in Resources */,
 			);
@@ -315,6 +312,26 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C9751B1D2B820458008C577B /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nset -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
 		CF3229D8AF8604B7DF90BB62 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -506,11 +523,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-Wl",
-					"-ld_classic",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -583,11 +596,7 @@
 				MTL_FAST_MATH = YES;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-Wl",
-					"-ld_classic",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -609,14 +618,186 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+					"-ObjC",
+					"-l\"RNScreens\"",
+					"-l\"c++\"",
+					"-l\"c++abi\"",
+					"-l\"icucore\"",
+					"-l\"jcore-noidfa-ios-3.1.0\"",
+					"-l\"jpush-ios-4.4.0\"",
+					"-l\"resolv\"",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AppAuth\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BVLinearGradient\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CocoaMQTT\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreModules\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"DoubleConversion\"",
+					"-framework",
+					"\"ESPullToRefresh\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GTMAppAuth\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleSignIn\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"LocalAuthentication\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"MqttCocoaAsyncSocket\"",
+					"-framework",
+					"\"Popover\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"RCTAnimation\"",
+					"-framework",
+					"\"RCTBlob\"",
+					"-framework",
+					"\"RCTImage\"",
+					"-framework",
+					"\"RCTLinking\"",
+					"-framework",
+					"\"RCTNetwork\"",
+					"-framework",
+					"\"RCTSettings\"",
+					"-framework",
+					"\"RCTText\"",
+					"-framework",
+					"\"RCTTypeSafety\"",
+					"-framework",
+					"\"RCTVibration\"",
+					"-framework",
+					"\"RNGestureHandler\"",
+					"-framework",
+					"\"RNSVG\"",
+					"-framework",
+					"\"React\"",
+					"-framework",
+					"\"ReactCommon\"",
+					"-framework",
+					"\"React_Codegen\"",
+					"-framework",
+					"\"React_NativeModulesApple\"",
+					"-framework",
+					"\"React_RCTAppDelegate\"",
+					"-framework",
+					"\"React_debug\"",
+					"-framework",
+					"\"React_runtimescheduler\"",
+					"-framework",
+					"\"React_utils\"",
+					"-framework",
+					"\"SPPermissions\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SocketRocket\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"cxxreact\"",
+					"-framework",
+					"\"fmt\"",
+					"-framework",
+					"\"folly\"",
+					"-framework",
+					"\"glog\"",
+					"-framework",
+					"\"hermes\"",
+					"-framework",
+					"\"jsi\"",
+					"-framework",
+					"\"jsinspector\"",
+					"-framework",
+					"\"jsireact\"",
+					"-framework",
+					"\"libevent\"",
+					"-framework",
+					"\"logger\"",
+					"-framework",
+					"\"react_native_dynamically_selected_picker\"",
+					"-framework",
+					"\"react_native_pager_view\"",
+					"-framework",
+					"\"react_native_safe_area_context\"",
+					"-framework",
+					"\"reacthermes\"",
+					"-framework",
+					"\"reactperflogger\"",
+					"-framework",
+					"\"yoga\"",
+					"-weak_framework",
+					"\"Accelerate\"",
+					"-weak_framework",
+					"\"Accounts\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"AppTrackingTransparency\"",
+					"-weak_framework",
+					"\"AudioToolbox\"",
+					"-weak_framework",
+					"\"AuthenticationServices\"",
+					"-weak_framework",
+					"\"CoreGraphics\"",
+					"-weak_framework",
+					"\"Foundation\"",
+					"-weak_framework",
+					"\"QuartzCore\"",
+					"-weak_framework",
+					"\"Security\"",
+					"-weak_framework",
+					"\"Social\"",
+					"-weak_framework",
+					"\"StoreKit\"",
+					"-weak_framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"UserNotifications\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.growatt.hut.SeparateRNPackage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -639,14 +820,186 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+					"-ObjC",
+					"-l\"RNScreens\"",
+					"-l\"c++\"",
+					"-l\"c++abi\"",
+					"-l\"icucore\"",
+					"-l\"jcore-noidfa-ios-3.1.0\"",
+					"-l\"jpush-ios-4.4.0\"",
+					"-l\"resolv\"",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AppAuth\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BVLinearGradient\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CocoaMQTT\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreModules\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"DoubleConversion\"",
+					"-framework",
+					"\"ESPullToRefresh\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GTMAppAuth\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleSignIn\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"LocalAuthentication\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"MqttCocoaAsyncSocket\"",
+					"-framework",
+					"\"Popover\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"RCTAnimation\"",
+					"-framework",
+					"\"RCTBlob\"",
+					"-framework",
+					"\"RCTImage\"",
+					"-framework",
+					"\"RCTLinking\"",
+					"-framework",
+					"\"RCTNetwork\"",
+					"-framework",
+					"\"RCTSettings\"",
+					"-framework",
+					"\"RCTText\"",
+					"-framework",
+					"\"RCTTypeSafety\"",
+					"-framework",
+					"\"RCTVibration\"",
+					"-framework",
+					"\"RNGestureHandler\"",
+					"-framework",
+					"\"RNSVG\"",
+					"-framework",
+					"\"React\"",
+					"-framework",
+					"\"ReactCommon\"",
+					"-framework",
+					"\"React_Codegen\"",
+					"-framework",
+					"\"React_NativeModulesApple\"",
+					"-framework",
+					"\"React_RCTAppDelegate\"",
+					"-framework",
+					"\"React_debug\"",
+					"-framework",
+					"\"React_runtimescheduler\"",
+					"-framework",
+					"\"React_utils\"",
+					"-framework",
+					"\"SPPermissions\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SocketRocket\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"cxxreact\"",
+					"-framework",
+					"\"fmt\"",
+					"-framework",
+					"\"folly\"",
+					"-framework",
+					"\"glog\"",
+					"-framework",
+					"\"hermes\"",
+					"-framework",
+					"\"jsi\"",
+					"-framework",
+					"\"jsinspector\"",
+					"-framework",
+					"\"jsireact\"",
+					"-framework",
+					"\"libevent\"",
+					"-framework",
+					"\"logger\"",
+					"-framework",
+					"\"react_native_dynamically_selected_picker\"",
+					"-framework",
+					"\"react_native_pager_view\"",
+					"-framework",
+					"\"react_native_safe_area_context\"",
+					"-framework",
+					"\"reacthermes\"",
+					"-framework",
+					"\"reactperflogger\"",
+					"-framework",
+					"\"yoga\"",
+					"-weak_framework",
+					"\"Accelerate\"",
+					"-weak_framework",
+					"\"Accounts\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"AppTrackingTransparency\"",
+					"-weak_framework",
+					"\"AudioToolbox\"",
+					"-weak_framework",
+					"\"AuthenticationServices\"",
+					"-weak_framework",
+					"\"CoreGraphics\"",
+					"-weak_framework",
+					"\"Foundation\"",
+					"-weak_framework",
+					"\"QuartzCore\"",
+					"-weak_framework",
+					"\"Security\"",
+					"-weak_framework",
+					"\"Social\"",
+					"-weak_framework",
+					"\"StoreKit\"",
+					"-weak_framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"UserNotifications\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.growatt.hut.SeparateRNPackage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
