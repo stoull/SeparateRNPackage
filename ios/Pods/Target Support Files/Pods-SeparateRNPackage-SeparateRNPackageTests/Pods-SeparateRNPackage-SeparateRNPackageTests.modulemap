@@ -1,0 +1,6 @@
+framework module Pods_SeparateRNPackage_SeparateRNPackageTests {
+  umbrella header "Pods-SeparateRNPackage-SeparateRNPackageTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
