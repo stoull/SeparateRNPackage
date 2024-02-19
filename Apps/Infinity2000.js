@@ -1,8 +1,22 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import React, { Component } from 'react';
+import {StyleSheet, Text, SafeAreaView} from 'react-native';
 
-const Infinity2000 = () => {
-    return <Text>Here is Infinity2000 module</Text>;
-};
-
-export default Infinity2000;
+export default class Infinity2000 extends Component {
+    render() {
+        return (
+          <SafeAreaView style={styles.container}>
+            <Text style={styles.text}>Here is Infinity2000 module</Text>
+          </SafeAreaView>
+        );
+    }
+  }
+  
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+    },
+    text: {
+      fontSize: 25,
+      fontWeight: '500',
+    },
+  });

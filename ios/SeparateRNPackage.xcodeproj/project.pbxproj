@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		20E459B2206A0000E08650E2 /* Pods_SeparateRNPackage_SeparateRNPackageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206464B38BFBFD13046F2BA2 /* Pods_SeparateRNPackage_SeparateRNPackageTests.framework */; };
+		C906BC522B82FBAD00556D5A /* base.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = C906BC502B82FBAD00556D5A /* base.jsbundle */; };
+		C906BC532B82FBAD00556D5A /* infinity2000.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = C906BC512B82FBAD00556D5A /* infinity2000.jsbundle */; };
+		C906BC552B82FD4000556D5A /* inverterkit.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = C906BC542B82FD4000556D5A /* inverterkit.jsbundle */; };
+		C906BC572B82FE0C00556D5A /* index.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = C906BC562B82FE0C00556D5A /* index.jsbundle */; };
 		C9AAD1D42B81FC01000DA2C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAD1D32B81FC01000DA2C1 /* AppDelegate.swift */; };
 		C9AAD1D62B81FC01000DA2C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAD1D52B81FC01000DA2C1 /* SceneDelegate.swift */; };
 		C9AAD1D82B81FC01000DA2C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAD1D72B81FC01000DA2C1 /* ViewController.swift */; };
@@ -43,6 +47,10 @@
 		206464B38BFBFD13046F2BA2 /* Pods_SeparateRNPackage_SeparateRNPackageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeparateRNPackage_SeparateRNPackageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C1ED048A6B0822147931FAE /* Pods-SeparateRNPackage-SeparateRNPackageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeparateRNPackage-SeparateRNPackageTests.debug.xcconfig"; path = "Target Support Files/Pods-SeparateRNPackage-SeparateRNPackageTests/Pods-SeparateRNPackage-SeparateRNPackageTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7477939D5E857F4D1B5BDD77 /* Pods_SeparateRNPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeparateRNPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C906BC502B82FBAD00556D5A /* base.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = base.jsbundle; sourceTree = "<group>"; };
+		C906BC512B82FBAD00556D5A /* infinity2000.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = infinity2000.jsbundle; sourceTree = "<group>"; };
+		C906BC542B82FD4000556D5A /* inverterkit.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inverterkit.jsbundle; sourceTree = "<group>"; };
+		C906BC562B82FE0C00556D5A /* index.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.jsbundle; sourceTree = "<group>"; };
 		C9AAD1D02B81FC01000DA2C1 /* SeparateRNPackage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeparateRNPackage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AAD1D32B81FC01000DA2C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9AAD1D52B81FC01000DA2C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,9 +116,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C906BC4F2B82FBAD00556D5A /* bundle */ = {
+			isa = PBXGroup;
+			children = (
+				C906BC562B82FE0C00556D5A /* index.jsbundle */,
+				C906BC502B82FBAD00556D5A /* base.jsbundle */,
+				C906BC512B82FBAD00556D5A /* infinity2000.jsbundle */,
+				C906BC542B82FD4000556D5A /* inverterkit.jsbundle */,
+			);
+			path = bundle;
+			sourceTree = "<group>";
+		};
 		C9AAD1C72B81FC00000DA2C1 = {
 			isa = PBXGroup;
 			children = (
+				C906BC4F2B82FBAD00556D5A /* bundle */,
 				C9C20DCC2B82099400EFEB2C /* ReactNative */,
 				C9AAD1D22B81FC01000DA2C1 /* SeparateRNPackage */,
 				C9AAD1E92B81FC02000DA2C1 /* SeparateRNPackageTests */,
@@ -280,7 +300,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9AAD1E02B81FC01000DA2C1 /* LaunchScreen.storyboard in Resources */,
+				C906BC522B82FBAD00556D5A /* base.jsbundle in Resources */,
+				C906BC572B82FE0C00556D5A /* index.jsbundle in Resources */,
+				C906BC532B82FBAD00556D5A /* infinity2000.jsbundle in Resources */,
 				C9AAD1DD2B81FC01000DA2C1 /* Assets.xcassets in Resources */,
+				C906BC552B82FD4000556D5A /* inverterkit.jsbundle in Resources */,
 				C9AAD1DB2B81FC01000DA2C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

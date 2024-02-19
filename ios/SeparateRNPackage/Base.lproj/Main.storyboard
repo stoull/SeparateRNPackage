@@ -24,11 +24,35 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1o-9t-h2A">
-                                <rect key="frame" x="123.66666666666669" y="294" width="146" height="41"/>
+                                <rect key="frame" x="132" y="294" width="129" height="41"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="推出RN RootVC"/>
+                                <buttonConfiguration key="configuration" style="plain" title="推出RN index"/>
                                 <connections>
                                     <action selector="pushRNVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wzV-rn-GOP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlX-LE-KR0">
+                                <rect key="frame" x="133.66666666666666" y="375" width="125.99999999999997" height="41"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="推出RN Base"/>
+                                <connections>
+                                    <action selector="pushRNVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qM7-N8-hQE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZL-IK-6Ac">
+                                <rect key="frame" x="106.66666666666669" y="456" width="180" height="41"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="推出RN infinity2000"/>
+                                <connections>
+                                    <action selector="pushRNVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4QL-83-TCA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXO-ch-BWO">
+                                <rect key="frame" x="113" y="537" width="167" height="41"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="推出RN InverterKit"/>
+                                <connections>
+                                    <action selector="pushRNVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahA-hc-7MK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -36,9 +60,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dKX-xV-GtR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="0B2-SF-Hu5"/>
+                            <constraint firstItem="xZL-IK-6Ac" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hdj-yB-adS"/>
                             <constraint firstItem="b1o-9t-h2A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LG6-bZ-u0F"/>
                             <constraint firstItem="dKX-xV-GtR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XyU-Ut-uMO"/>
+                            <constraint firstItem="aXO-ch-BWO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YxG-yx-vcP"/>
+                            <constraint firstItem="aXO-ch-BWO" firstAttribute="top" secondItem="xZL-IK-6Ac" secondAttribute="bottom" constant="40" id="faX-wi-O4G"/>
                             <constraint firstItem="b1o-9t-h2A" firstAttribute="top" secondItem="dKX-xV-GtR" secondAttribute="bottom" constant="70" id="h5x-CE-IqV"/>
+                            <constraint firstItem="xZL-IK-6Ac" firstAttribute="top" secondItem="YlX-LE-KR0" secondAttribute="bottom" constant="40" id="jOZ-1V-BnJ"/>
+                            <constraint firstItem="YlX-LE-KR0" firstAttribute="top" secondItem="b1o-9t-h2A" secondAttribute="bottom" constant="40" id="lso-DE-Rg0"/>
+                            <constraint firstItem="YlX-LE-KR0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qZk-D0-CjM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Wz-DY-dPv"/>
