@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {StyleSheet, Text, SafeAreaView} from 'react-native';
 
-export default class Base extends Component {
+class Base extends Component {
   render() {
       return (
         <SafeAreaView style={styles.container}>
@@ -20,3 +20,9 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
 });
+
+function TestMethod(args) {
+  console.log('TestMethod', args);
+}
+
+export default Base;

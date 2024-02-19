@@ -22,6 +22,9 @@
 		C9AAD1F52B81FC02000DA2C1 /* SeparateRNPackageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAD1F42B81FC02000DA2C1 /* SeparateRNPackageUITests.swift */; };
 		C9AAD1F72B81FC02000DA2C1 /* SeparateRNPackageUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAD1F62B81FC02000DA2C1 /* SeparateRNPackageUITestsLaunchTests.swift */; };
 		C9C20DCE2B8209A700EFEB2C /* RNRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C20DCD2B8209A700EFEB2C /* RNRootVC.swift */; };
+		C9CCDD552B832A6C005A660A /* RNBridgeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDD542B832A6C005A660A /* RNBridgeManager.swift */; };
+		C9CCDD582B832B28005A660A /* RNModuleAPIs.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDD572B832B28005A660A /* RNModuleAPIs.m */; };
+		C9CCDD5A2B83342A005A660A /* PackageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDD592B83342A005A660A /* PackageType.swift */; };
 		D496A2810BF2FE312C2A8239 /* Pods_SeparateRNPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7477939D5E857F4D1B5BDD77 /* Pods_SeparateRNPackage.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,10 @@
 		C9AAD1F42B81FC02000DA2C1 /* SeparateRNPackageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateRNPackageUITests.swift; sourceTree = "<group>"; };
 		C9AAD1F62B81FC02000DA2C1 /* SeparateRNPackageUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateRNPackageUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C9C20DCD2B8209A700EFEB2C /* RNRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNRootVC.swift; sourceTree = "<group>"; };
+		C9CCDD542B832A6C005A660A /* RNBridgeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNBridgeManager.swift; sourceTree = "<group>"; };
+		C9CCDD562B832B28005A660A /* SeparateRNPackage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SeparateRNPackage-Bridging-Header.h"; sourceTree = "<group>"; };
+		C9CCDD572B832B28005A660A /* RNModuleAPIs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNModuleAPIs.m; sourceTree = "<group>"; };
+		C9CCDD592B83342A005A660A /* PackageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageType.swift; sourceTree = "<group>"; };
 		E285310D357AD28EA70DADEF /* Pods-SeparateRNPackage-SeparateRNPackageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeparateRNPackage-SeparateRNPackageTests.release.xcconfig"; path = "Target Support Files/Pods-SeparateRNPackage-SeparateRNPackageTests/Pods-SeparateRNPackage-SeparateRNPackageTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF619A65375CB8417EE1B26B /* Pods-SeparateRNPackage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeparateRNPackage.debug.xcconfig"; path = "Target Support Files/Pods-SeparateRNPackage/Pods-SeparateRNPackage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +167,7 @@
 				C9AAD1D92B81FC01000DA2C1 /* Main.storyboard */,
 				C9AAD1DC2B81FC01000DA2C1 /* Assets.xcassets */,
 				C9AAD1DE2B81FC01000DA2C1 /* LaunchScreen.storyboard */,
+				C9CCDD562B832B28005A660A /* SeparateRNPackage-Bridging-Header.h */,
 				C9AAD1E12B81FC01000DA2C1 /* Info.plist */,
 			);
 			path = SeparateRNPackage;
@@ -185,7 +193,10 @@
 		C9C20DCC2B82099400EFEB2C /* ReactNative */ = {
 			isa = PBXGroup;
 			children = (
+				C9CCDD542B832A6C005A660A /* RNBridgeManager.swift */,
 				C9C20DCD2B8209A700EFEB2C /* RNRootVC.swift */,
+				C9CCDD592B83342A005A660A /* PackageType.swift */,
+				C9CCDD572B832B28005A660A /* RNModuleAPIs.m */,
 			);
 			path = ReactNative;
 			sourceTree = "<group>";
@@ -263,6 +274,7 @@
 				TargetAttributes = {
 					C9AAD1CF2B81FC00000DA2C1 = {
 						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1520;
 					};
 					C9AAD1E52B81FC02000DA2C1 = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -431,10 +443,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CCDD582B832B28005A660A /* RNModuleAPIs.m in Sources */,
+				C9CCDD552B832A6C005A660A /* RNBridgeManager.swift in Sources */,
 				C9AAD1D82B81FC01000DA2C1 /* ViewController.swift in Sources */,
 				C9AAD1D42B81FC01000DA2C1 /* AppDelegate.swift in Sources */,
 				C9C20DCE2B8209A700EFEB2C /* RNRootVC.swift in Sources */,
 				C9AAD1D62B81FC01000DA2C1 /* SceneDelegate.swift in Sources */,
+				C9CCDD5A2B83342A005A660A /* PackageType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +669,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DFM3SPMA69;
@@ -674,6 +690,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.growatt.hut.SeparateRNPackage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SeparateRNPackage/SeparateRNPackage-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -685,6 +703,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DFM3SPMA69;
@@ -705,6 +724,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.growatt.hut.SeparateRNPackage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SeparateRNPackage/SeparateRNPackage-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
