@@ -26,7 +26,6 @@
 		C9CCDD582B832B28005A660A /* RNModuleAPIs.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDD572B832B28005A660A /* RNModuleAPIs.m */; };
 		C9CCDD5A2B83342A005A660A /* PackageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDD592B83342A005A660A /* PackageType.swift */; };
 		C9CCDD5C2B835AA9005A660A /* RNBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDD5B2B835AA9005A660A /* RNBase.swift */; };
-		C9CCDD5E2B842DFA005A660A /* RNCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDD5D2B842DFA005A660A /* RNCallback.swift */; };
 		D496A2810BF2FE312C2A8239 /* Pods_SeparateRNPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7477939D5E857F4D1B5BDD77 /* Pods_SeparateRNPackage.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +74,6 @@
 		C9CCDD572B832B28005A660A /* RNModuleAPIs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNModuleAPIs.m; sourceTree = "<group>"; };
 		C9CCDD592B83342A005A660A /* PackageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageType.swift; sourceTree = "<group>"; };
 		C9CCDD5B2B835AA9005A660A /* RNBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNBase.swift; sourceTree = "<group>"; };
-		C9CCDD5D2B842DFA005A660A /* RNCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNCallback.swift; sourceTree = "<group>"; };
 		E285310D357AD28EA70DADEF /* Pods-SeparateRNPackage-SeparateRNPackageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeparateRNPackage-SeparateRNPackageTests.release.xcconfig"; path = "Target Support Files/Pods-SeparateRNPackage-SeparateRNPackageTests/Pods-SeparateRNPackage-SeparateRNPackageTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF619A65375CB8417EE1B26B /* Pods-SeparateRNPackage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeparateRNPackage.debug.xcconfig"; path = "Target Support Files/Pods-SeparateRNPackage/Pods-SeparateRNPackage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				C9CCDD5B2B835AA9005A660A /* RNBase.swift */,
-				C9CCDD5D2B842DFA005A660A /* RNCallback.swift */,
 				C9CCDD542B832A6C005A660A /* RNBridge.swift */,
 				C9C20DCD2B8209A700EFEB2C /* RNRootVC.swift */,
 				C9CCDD592B83342A005A660A /* PackageType.swift */,
@@ -452,7 +449,6 @@
 				C9CCDD582B832B28005A660A /* RNModuleAPIs.m in Sources */,
 				C9CCDD552B832A6C005A660A /* RNBridge.swift in Sources */,
 				C9CCDD5C2B835AA9005A660A /* RNBase.swift in Sources */,
-				C9CCDD5E2B842DFA005A660A /* RNCallback.swift in Sources */,
 				C9AAD1D82B81FC01000DA2C1 /* ViewController.swift in Sources */,
 				C9AAD1D42B81FC01000DA2C1 /* AppDelegate.swift in Sources */,
 				C9C20DCE2B8209A700EFEB2C /* RNRootVC.swift in Sources */,

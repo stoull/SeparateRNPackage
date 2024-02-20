@@ -11,6 +11,8 @@
 
 @interface RCT_EXTERN_MODULE(RNBase, RCTEventEmitter)
 RCT_EXTERN_METHOD(inquiryDeviceInfoCallBack:(NSString *)infoJSON)
+RCT_EXTERN_METHOD(checkUpdateCallBack:(NSString *)infoJSON)
+RCT_EXTERN_METHOD(addtionalFunction:(NSString *)infoJSON)
 @end
 
 //@interface

@@ -9,19 +9,66 @@ import Foundation
 import React
 
 enum EVENTS: String, CaseIterable {
+    // 查询设备信息
     case inquiryDeviceInfo = "INQUIRY-DEVICE-INFO"
+    // 查询设备升级信息
+    case checkUpdate = "INQUIRY-DEVICE-UPDATE"
+    // 使用多包时，调用Addtional包的方法
+    case addtionalFunction = "Addtional-Function"
 }
 
 @objc(RNBase)
 class RNBase: RCTEventEmitter {
     public static var shared: RNBase?
     
-    var hasListeners: Bool = true
+    var hasListeners: Bool = false
     
     @objc
     override init() {
         super.init()
         RNBase.shared = self
+    }
+    
+    // 查询设备信息
+    typealias CallbackHandler = ((String)->Void)
+    private var callbackHandle: CallbackHandler?
+    func inquiryDeviceInfo(result: @escaping CallbackHandler) {
+        if hasListeners {
+            self.sendEvent(withName: EVENTS.inquiryDeviceInfo.rawValue, body: "{}")
+        }
+        callbackHandle = result
+    }
+    
+    func inquiryDeviceUpdateInfo(result: @escaping CallbackHandler) {
+        if hasListeners {
+            self.sendEvent(withName: EVENTS.checkUpdate.rawValue, body: "{}")
+        }
+        callbackHandle = result
+    }
+    
+    func inquiryAddtionalFunctionInfo(result: @escaping CallbackHandler) {
+        if hasListeners {
+            self.sendEvent(withName: EVENTS.addtionalFunction.rawValue, body: "{}")
+        }
+        callbackHandle = result
+    }
+    
+    // 查询设备信息
+    @objc(inquiryDeviceInfoCallBack:)
+    func inquiryDeviceInfoCallBack(infoJSON: String) {
+        self.callbackHandle?(infoJSON)
+    }
+    
+    // 查询设备升级信息
+    @objc(checkUpdateCallBack:)
+    func checkUpdateCallBack(infoJSON: String) {
+        self.callbackHandle?(infoJSON)
+    }
+    
+    // 使用多包时，调用Addtional包的方法
+    @objc(addtionalFunction:)
+    func addtionalFunction(infoJSON: String) {
+        self.callbackHandle?(infoJSON)
     }
     
     @objc
@@ -34,10 +81,6 @@ class RNBase: RCTEventEmitter {
       return false
     }
     
-    
-//    - (void)startObserving;
-//    - (void)stopObserving;
-    
     // Will be called when this module's first listener is added.
     @objc
     override func startObserving() {
@@ -48,23 +91,5 @@ class RNBase: RCTEventEmitter {
     @objc
     override func stopObserving() {
         hasListeners = false
-    }
-    
-    
-    /// 查询设备信息
-    @objc(inquiryDeviceInfoCallBack:)
-    func inquiryDeviceInfoCallBack(infoJSON: String) {
-        print("xxxxxx inquiryDeviceInfoCallBack: \(infoJSON)")
-    }
-}
-
-// MARK: - 有数据更新
-extension RNBase {
-    /// 查询设备信息
-    func inquiryDeviceInfo() {
-        if hasListeners {
-            self.sendEvent(withName: EVENTS.inquiryDeviceInfo.rawValue, body: "{}")
-            print("xxx inquiryDeviceInfo")
-        }
     }
 }

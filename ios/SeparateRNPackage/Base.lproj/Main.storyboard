@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="原生VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKX-xV-GtR">
-                                <rect key="frame" x="166.66666666666666" y="203" width="60" height="21"/>
+                                <rect key="frame" x="168" y="203" width="57" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1o-9t-h2A">
-                                <rect key="frame" x="132" y="294" width="129" height="41"/>
+                                <rect key="frame" x="133.33333333333334" y="294" width="126.66666666666666" height="34.333333333333314"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="推出RN index"/>
                                 <connections>
@@ -32,46 +32,77 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlX-LE-KR0">
-                                <rect key="frame" x="133.66666666666666" y="375" width="125.99999999999997" height="41"/>
+                                <rect key="frame" x="113" y="348.33333333333331" width="167" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="推出RN Base"/>
+                                <buttonConfiguration key="configuration" style="plain" title="调用 RN Base 模块"/>
                                 <connections>
                                     <action selector="pushRNVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qM7-N8-hQE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZL-IK-6Ac">
-                                <rect key="frame" x="106.66666666666669" y="456" width="180" height="41"/>
+                                <rect key="frame" x="88" y="443.33333333333331" width="217" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="推出RN infinity2000"/>
+                                <buttonConfiguration key="configuration" style="plain" title="推出RN infinity2000 模块"/>
                                 <connections>
                                     <action selector="pushRNVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4QL-83-TCA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXO-ch-BWO">
-                                <rect key="frame" x="113" y="537" width="167" height="41"/>
+                                <rect key="frame" x="94.666666666666686" y="518.33333333333337" width="204" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="推出RN InverterKit"/>
+                                <buttonConfiguration key="configuration" style="plain" title="推出RN InverterKit 模块"/>
                                 <connections>
                                     <action selector="pushRNVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahA-hc-7MK"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="RN Base模块调用结果：" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5e9-tu-bVU">
+                                <rect key="frame" x="24" y="385.33333333333331" width="345" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="CQO-xF-Kyk"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="InverterKit 模块调用结果：" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DT2-54-UlH">
+                                <rect key="frame" x="22" y="557.33333333333337" width="349" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="MKx-xH-ZHy"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="lR5-fn-RDs"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dKX-xV-GtR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="0B2-SF-Hu5"/>
+                            <constraint firstItem="DT2-54-UlH" firstAttribute="top" secondItem="aXO-ch-BWO" secondAttribute="bottom" constant="4" id="67Q-6S-m82"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5e9-tu-bVU" secondAttribute="trailing" constant="24" id="7b2-58-KVS"/>
                             <constraint firstItem="xZL-IK-6Ac" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hdj-yB-adS"/>
                             <constraint firstItem="b1o-9t-h2A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LG6-bZ-u0F"/>
+                            <constraint firstItem="DT2-54-UlH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="Lg5-tD-eBE"/>
+                            <constraint firstItem="5e9-tu-bVU" firstAttribute="top" secondItem="YlX-LE-KR0" secondAttribute="bottom" constant="2" id="NaA-OQ-0lk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DT2-54-UlH" secondAttribute="trailing" constant="22" id="Ojn-gG-QNF"/>
+                            <constraint firstItem="5e9-tu-bVU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Pvb-yO-QiP"/>
                             <constraint firstItem="dKX-xV-GtR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XyU-Ut-uMO"/>
                             <constraint firstItem="aXO-ch-BWO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YxG-yx-vcP"/>
                             <constraint firstItem="aXO-ch-BWO" firstAttribute="top" secondItem="xZL-IK-6Ac" secondAttribute="bottom" constant="40" id="faX-wi-O4G"/>
                             <constraint firstItem="b1o-9t-h2A" firstAttribute="top" secondItem="dKX-xV-GtR" secondAttribute="bottom" constant="70" id="h5x-CE-IqV"/>
-                            <constraint firstItem="xZL-IK-6Ac" firstAttribute="top" secondItem="YlX-LE-KR0" secondAttribute="bottom" constant="40" id="jOZ-1V-BnJ"/>
-                            <constraint firstItem="YlX-LE-KR0" firstAttribute="top" secondItem="b1o-9t-h2A" secondAttribute="bottom" constant="40" id="lso-DE-Rg0"/>
+                            <constraint firstItem="xZL-IK-6Ac" firstAttribute="top" secondItem="YlX-LE-KR0" secondAttribute="bottom" constant="60" id="jOZ-1V-BnJ"/>
+                            <constraint firstItem="YlX-LE-KR0" firstAttribute="top" secondItem="b1o-9t-h2A" secondAttribute="bottom" constant="20" id="lso-DE-Rg0"/>
                             <constraint firstItem="YlX-LE-KR0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qZk-D0-CjM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Wz-DY-dPv"/>
+                    <connections>
+                        <outlet property="baseResultTextView" destination="5e9-tu-bVU" id="sMB-ci-f1l"/>
+                        <outlet property="inverterResultTextView" destination="DT2-54-UlH" id="VtI-iI-qW6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,6 +128,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

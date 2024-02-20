@@ -5,51 +5,51 @@ import { NativeModules, NativeEventEmitter} from 'react-native';
 
 // 引入原生模块,进行回调操作
 const baseCallBack = NativeModules.RNBase;
-
 // 数据订阅推送
 const dataUpdater = new NativeEventEmitter(NativeModules.RNBase);
 
+// 原生调用的不同方法类型
+const FunctionType = Object.freeze({
+  // 查询设备信息
+  inquiryDeviceInfo: 'INQUIRY-DEVICE-INFO',
+  // 查询设备升级信息
+  checkUpdate: 'INQUIRY-DEVICE-UPDATE'
+})
+
 /*
-  开始接收数据
+  开始接收原生调用方法的请求
 */
 export const startDataReceiving = () => {
-  console.log('====== 原生方法调用 ====== \n');
-  // dataUpdater.addListener('INQUIRY-DEVICE-INFO', data => console.log(data));
-  dataUpdater.addListener('INQUIRY-DEVICE-INFO', function(data) {
-    console.log('====== 原生方法调用参数 ====== \n');
+
+  dataUpdater.addListener(FunctionType.inquiryDeviceInfo, function(data) {
+    console.log('====== 原生方法调用 查询设备信息 方法 ====== \n');
     console.log(data);
 
     // 回调结果给原生
     baseCallBack.inquiryDeviceInfoCallBack(JSON.stringify({type:'Infinity200', sn: 'XCM0DCG00Q'}));
   });
 
-  // RNDeviceDataUpdater.stopUpdate()
-  // dataUpdater.removeEventListener('SUBSCRIBE', '');
-};
+  dataUpdater.addListener(FunctionType.checkUpdate, function(data) {
+    console.log('====== 原生方法调用 查询设备升级信息 方法 ====== \n');
+    console.log(data);
 
-// startDataReceiving();
+    // 回调结果给原生
+    baseCallBack.checkUpdateCallBack(JSON.stringify({needsUpdate:'0', version: '1.2.0'}));
+  });
+
+  // dataUpdater.removeEventListener(FunctionType.inquiryDeviceInfo, '');
+  // dataUpdater.removeEventListener(FunctionType.checkUpdate, '');
+};
 
 export class Base extends Component {
 
   render() {
-      return (
-        <SafeAreaView style={styles.container}>
-          <Text style={styles.text}>Here is Base module</Text>
-        </SafeAreaView>
-      );
+      return null;
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  text: {
-    fontSize: 25,
-    fontWeight: '500',
-  },
-});
-
-function TestMethod(args) {
-  console.log('TestMethod', args);
+export const baseModuleMethod = () => {
+  const logMsg = {message: "This message from Base Module", args: 'arg1, arg2'};
+  console.log(logMsg);
+  return logMsg;
 }
