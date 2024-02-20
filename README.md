@@ -4,6 +4,9 @@
 
 metro-config
 
+自动打包工具：`package-auto.sh`, 现只有iOS打包指令
+
+
 [可视化分析工具 - react-native-bundle-visualizer](https://github.com/IjzerenHein/react-native-bundle-visualizer)
 
 安装: `yarn add --dev react-native-bundle-visualizer`
