@@ -1,10 +1,11 @@
 import { AppRegistry } from 'react-native';
 
-import AppBase from './Apps/Base';
+import {Base, startDataReceiving} from './Apps/Base';
 import { base as appName } from './app.json';
 
+AppRegistry.registerComponent(appName, () => Base);
 
-AppRegistry.registerComponent(appName, () => AppBase);
+startDataReceiving();
 
 
 // he  require('BatchedBridge')  method is no longer supported in React Native versions 0.60 and above.

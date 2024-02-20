@@ -43,7 +43,7 @@ enum PackageType: Int {
         // 泳康电脑
     //        guard let jsBundleLocation = URL(string: "http://20.60.3.72:8081/index.bundle?platform=ios&dev=true&hot=false") else { return nil }
         // 工作电脑 macmini
-            guard let jsBundleLocation = URL(string: "http://20.4.2.128:8081/index.bundle?platform=ios&dev=true&hot=false") else { return nil }
+//            guard let jsBundleLocation = URL(string: "http://20.4.2.128:8081/index.bundle?platform=ios&dev=true&hot=false") else { return nil }
         // 工作电脑 intel wifi
     //        guard let jsBundleLocation = URL(string: "http://192.168.1.157:8081/index.bundle?platform=ios&dev=true&hot=false") else { return nil}
     //        guard let jsBundleLocation = Bundle.main.url(forResource: "main", withExtension: "jsbundle") else { return nil }
@@ -52,7 +52,7 @@ enum PackageType: Int {
         //jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
     //        +jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
         
-//        guard let jsBundleLocation = Bundle.main.url(forResource: self.info.packageName, withExtension: "jsbundle") else { return nil }
+        guard let jsBundleLocation = Bundle.main.url(forResource: self.info.packageName, withExtension: "jsbundle") else { return nil }
         return jsBundleLocation
     }
 }

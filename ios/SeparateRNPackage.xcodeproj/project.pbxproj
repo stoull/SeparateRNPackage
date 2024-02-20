@@ -22,7 +22,7 @@
 		C9AAD1F52B81FC02000DA2C1 /* SeparateRNPackageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAD1F42B81FC02000DA2C1 /* SeparateRNPackageUITests.swift */; };
 		C9AAD1F72B81FC02000DA2C1 /* SeparateRNPackageUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAD1F62B81FC02000DA2C1 /* SeparateRNPackageUITestsLaunchTests.swift */; };
 		C9C20DCE2B8209A700EFEB2C /* RNRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C20DCD2B8209A700EFEB2C /* RNRootVC.swift */; };
-		C9CCDD552B832A6C005A660A /* RNBridgeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDD542B832A6C005A660A /* RNBridgeManager.swift */; };
+		C9CCDD552B832A6C005A660A /* RNBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDD542B832A6C005A660A /* RNBridge.swift */; };
 		C9CCDD582B832B28005A660A /* RNModuleAPIs.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDD572B832B28005A660A /* RNModuleAPIs.m */; };
 		C9CCDD5A2B83342A005A660A /* PackageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDD592B83342A005A660A /* PackageType.swift */; };
 		C9CCDD5C2B835AA9005A660A /* RNBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCDD5B2B835AA9005A660A /* RNBase.swift */; };
@@ -70,7 +70,7 @@
 		C9AAD1F42B81FC02000DA2C1 /* SeparateRNPackageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateRNPackageUITests.swift; sourceTree = "<group>"; };
 		C9AAD1F62B81FC02000DA2C1 /* SeparateRNPackageUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateRNPackageUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C9C20DCD2B8209A700EFEB2C /* RNRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNRootVC.swift; sourceTree = "<group>"; };
-		C9CCDD542B832A6C005A660A /* RNBridgeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNBridgeManager.swift; sourceTree = "<group>"; };
+		C9CCDD542B832A6C005A660A /* RNBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNBridge.swift; sourceTree = "<group>"; };
 		C9CCDD562B832B28005A660A /* SeparateRNPackage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SeparateRNPackage-Bridging-Header.h"; sourceTree = "<group>"; };
 		C9CCDD572B832B28005A660A /* RNModuleAPIs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNModuleAPIs.m; sourceTree = "<group>"; };
 		C9CCDD592B83342A005A660A /* PackageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageType.swift; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 			children = (
 				C9CCDD5B2B835AA9005A660A /* RNBase.swift */,
 				C9CCDD5D2B842DFA005A660A /* RNCallback.swift */,
-				C9CCDD542B832A6C005A660A /* RNBridgeManager.swift */,
+				C9CCDD542B832A6C005A660A /* RNBridge.swift */,
 				C9C20DCD2B8209A700EFEB2C /* RNRootVC.swift */,
 				C9CCDD592B83342A005A660A /* PackageType.swift */,
 				C9CCDD572B832B28005A660A /* RNModuleAPIs.m */,
@@ -450,7 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CCDD582B832B28005A660A /* RNModuleAPIs.m in Sources */,
-				C9CCDD552B832A6C005A660A /* RNBridgeManager.swift in Sources */,
+				C9CCDD552B832A6C005A660A /* RNBridge.swift in Sources */,
 				C9CCDD5C2B835AA9005A660A /* RNBase.swift in Sources */,
 				C9CCDD5E2B842DFA005A660A /* RNCallback.swift in Sources */,
 				C9AAD1D82B81FC01000DA2C1 /* ViewController.swift in Sources */,

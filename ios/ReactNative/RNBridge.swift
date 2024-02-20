@@ -8,24 +8,28 @@
 import Foundation
 
 @objc(RNModuleManager)
-class RNBridgeManager: NSObject {
-    static let shared = RNBridgeManager()
+class RNBridge: NSObject {
+    static let shared = RNBridge()
     
     var bridge: RCTBridge?
     
+    convenience init(type: PackageType) {
+        self.init()
+        self.setupBridge(type: type)
+    }
+    
     override init() {
         super.init()
-        self.initBridge()
     }
 
-    func initBridge() {
+    func setupBridge(type: PackageType) {
         if let sourceUrl = PackageType.base.packageUrl {
             self.bridge = RCTBridge(delegate: self, bundleURL: sourceUrl, moduleProvider: nil)
         }
     }
 }
 
-extension RNBridgeManager: RCTBridgeDelegate {
+extension RNBridge: RCTBridgeDelegate {
     func sourceURL(for bridge: RCTBridge!) -> URL! {
         if let sourceUrl = PackageType.base.packageUrl {
             return sourceUrl

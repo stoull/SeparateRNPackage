@@ -7,12 +7,12 @@ import { NativeModules, NativeEventEmitter} from 'react-native';
 const baseCallBack = NativeModules.RNBase;
 
 // 数据订阅推送
-const dataUpdater = new NativeEventEmitter(NativeModules.RNDeviceDataUpdater);
+const dataUpdater = new NativeEventEmitter(NativeModules.RNBase);
 
 /*
   开始接收数据
 */
-const startDataReceiving = () => {
+export const startDataReceiving = () => {
   console.log('====== 原生方法调用 ====== \n');
   // dataUpdater.addListener('INQUIRY-DEVICE-INFO', data => console.log(data));
   dataUpdater.addListener('INQUIRY-DEVICE-INFO', function(data) {
@@ -27,7 +27,9 @@ const startDataReceiving = () => {
   // dataUpdater.removeEventListener('SUBSCRIBE', '');
 };
 
-class Base extends Component {
+// startDataReceiving();
+
+export class Base extends Component {
 
   render() {
       return (
@@ -51,5 +53,3 @@ const styles = StyleSheet.create({
 function TestMethod(args) {
   console.log('TestMethod', args);
 }
-
-export default Base;

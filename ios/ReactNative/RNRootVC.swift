@@ -11,6 +11,8 @@ import React
 
 class RNRootVC: UIViewController {
 
+    var rnRootView: RCTRootView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Native - Home"
@@ -38,6 +40,7 @@ extension RNRootVC {
               launchOptions: nil
         )
         let vc = RNRootVC()
+        vc.rnRootView = rootView
         vc.view = rootView
         return vc
     }
