@@ -37,6 +37,7 @@ class ViewController: UIViewController {
                 
                 print("xxxxxx await enqueueJSCall")
                 await bridgeManager.bridge?.enqueueJSCall("Base", method: "TestMethod", args: ["arg1", "arge2"])
+//                await bridgeManager.bridge?.enqueueJSCall("AppRegistry", method: "runApplication", args: ["Base", "arge2"])
                 print("xxxxxx fininshed enqueueJSCall")
                 
             } else {
